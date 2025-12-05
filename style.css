@@ -67,13 +67,13 @@ margin-top: auto;
 }
 
 .planet-name {
-    color: rgb(34, 197, 61);      /* blue */
+    color: rgb(34, 197, 61);      
     font-weight: bold;
     font-size: larger;
 }
 
 .planet-weight {
-    color: rgb(34, 197, 61);      /* reddish-pink */
+    color: rgb(34, 197, 61);      
     font-weight: bold;
     font-size: larger;
 }
@@ -115,10 +115,11 @@ margin-top: auto;
   justify-items: center;
 }
 
-@media (min-width: 400px) {
+@media (min-width: 600px) {
   .column {
     /* On wider screens (tablets/desktops), columns share the space equally */
     flex: 1 1 calc(33% - 10px); /* Makes them roughly third-width */
+    
   }
 
 
