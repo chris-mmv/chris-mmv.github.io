@@ -6,23 +6,13 @@ font-family: monospace, sans-serif;
 font-size: 45px;
 margin-top: 50px;
 text-shadow: 2px 2px 30px rgb(94, 0, 0);
-
 }
 
 label {
   display: block;
   margin-bottom: 5px;
 }
-/*
-body{
-/*background-color: rgb(113, 92, 170);
-background: linear-gradient(144deg, #00DDEB, #5b42f3, #AF40FF);
-text-align: center;
-align-items: center;
-justify-items: center;
-margin-top: auto;
-}
-*/
+
 body {
   background: linear-gradient(144deg, #00DDEB, #5b42f3, #AF40FF);
   min-height: 100vh;
@@ -33,7 +23,6 @@ body {
   justify-content: center;
   justify-items: center;
 }
-
 
 .button-64 {
   align-items: center;
@@ -92,10 +81,6 @@ body {
     font-size: larger;
 }
 
-/*.container {
-    width: 100%;
-}*/
-
 .row {
   display: flex;
   gap: 20px; /* Provides space between columns */
@@ -103,10 +88,8 @@ body {
 }
 
 .columnR {
-  /* On mobile, columns take up the full width (minus gap) */
   flex: 1 1 100%;
   padding: 10px;
-  /*background-color: #eee;*/
   text-align: left;
   alignment-baseline: left;
   justify-content: left;
@@ -115,10 +98,8 @@ body {
   align-content: left;
 }
 .columnL {
-  /* On mobile, columns take up the full width (minus gap) */
   flex: 1 1 100%;
   padding: 10px;
-  /*background-color: #eee;*/
   text-align: right;
   alignment-baseline: right;
   justify-content: right;
@@ -141,6 +122,5 @@ body {
     flex: 1 1 calc(33% - 10px); /* Makes them roughly third-width */
     
   }
-
 
 }
