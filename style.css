@@ -102,23 +102,25 @@ body {
   margin-bottom: 10px;
 }
 
-.columnL {
-  /* On mobile, columns take up the full width (minus gap) */
-  flex: 1 1 100%;
-  padding: 10px;
-  /*background-color: #eee;*/
-  text-align: left;
-  justify-content: left;
-  justify-items: left;
-  align-items: left;
-  align-content: left;
-}
 .columnR {
   /* On mobile, columns take up the full width (minus gap) */
   flex: 1 1 100%;
   padding: 10px;
   /*background-color: #eee;*/
+  text-align: left;
+  alignment-baseline: left;
+  justify-content: left;
+  justify-items: left;
+  align-items: left;
+  align-content: left;
+}
+.columnL {
+  /* On mobile, columns take up the full width (minus gap) */
+  flex: 1 1 100%;
+  padding: 10px;
+  /*background-color: #eee;*/
   text-align: right;
+  alignment-baseline: right;
   justify-content: right;
   justify-items: right;
   align-items: right;

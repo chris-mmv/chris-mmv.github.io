@@ -12,7 +12,7 @@
   <div class="row">
     <div class="column">
   <header>
-    <h1 class="permanent-marker-regular">I can Calculate Astro Weight!</h1>
+    <h1 class="permanent-marker-regular">Calculate Astro Weight!</h1>
   </header>
   </div>
   </div>
@@ -20,15 +20,14 @@
   <main>
   <!-- Input field to enter a weight -->
     <div class="row">
-      <div class="columnR">
-      <label for="user-weight">Enter your weight:</label>
-      <input id="user-weight" type="text" placeholder="Weight (lbs)" />
+      <div class="columnL">
+      <label for="user-weight">Enter your weight<br>(.1 lb increments):</label></label>
+      <input id="user-weight" type="number" placeholder="Weight (lbs)" min="1" step=".1" oninput="validity.valid || (value='');"/>
       </div>
-      
 
-    <div class="columnL">
+    <div class="columnR">
     <!-- Drop down to select planet -->
-      <label for="planets">Choose a planet:</label>
+      <label for="planets"><br>Choose a planet:</label>
       <select id="planets" name="planets">
         <option value="">--Please choose an option--</option>      
       </select>
