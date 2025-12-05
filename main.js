@@ -28,11 +28,8 @@ planetsReversed.forEach(function(planet) {
 });
 
 function calculateWeight(weight, planetName) {
-    //get users weight from HTML input
-    //WRONG SPOT var userWeight = document.getElementById("user-weight").value;
-    //get selected planet from HTML dropdown
-    //WRONG SPOT var planetName = document.getElementById("planet").value;
-    
+    //takes users weight from HTML input
+    //takes selected planet from HTML dropdown        
     //find the planet in the "planets" array and return gravity factor?
     for (var i = 0; i < planets.length; i++) {
         if (planets[i][0] === planetName) {
@@ -55,8 +52,7 @@ function handleClickEvent(e) {
     //display result in HTML
     var resultDisplay = document.getElementById("output");
 resultDisplay.innerHTML = `
-  If you were on <span class="planet-name">${selectedPlanet}</span>, 
-  you would weigh <span class="planet-weight">${result.toFixed(2)}lbs</span>!
+  If you were on <span class="planet-name">${selectedPlanet}</span>, you would weigh <span class="planet-weight">${result.toFixed(2)}lbs</span>!
 `;
 
 
