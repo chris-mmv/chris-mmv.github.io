@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Astro Weight Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+  </head>
+
+<body>
+  <h1 class="permanent-marker-regular">I can Calculate Astro Weight!</h1>
+
+  <!-- Input field to enter a weight -->
+  <label for="user-weight">Enter your weight:</label>
+
+  <input id="user-weight" type="text" placeholder="Weight (lbs)" />
+
+
+  <!-- Drop down to select planet -->
+  <label for="planets">Choose a planet:</label>
+<select id="planets" name="planets">
+  <option value="">--Please choose an option--</option>
+  <!--DO NOT NEED TO MANUALLY INPUT THESE; AUTO GENERATED FROM JS ARRAY-->
+</select>
+
+  <!-- Calculate button -->
+  <button class="button-64" role="button" id="calculate-button"><span class="text">Calculate</span></button>
+  <!--button class="button-64" role="button"><span class="text">Button 64</span></button>
+
+  <!-- output sentence -->
+  <p id="output">
+    Enter your weight, select a planet, then hit Calculate!<span id="output"></span>
+  </p>
+
+  <!--<img src="https://spaceplace.nasa.gov/review/planets-weight/planets-weight1.en.png" alt="Space Weight" width="425" />-->
+  <img src="ChatGPT Image Dec 3, 2025, 05_27_46 PM.png" alt="Fat Astronaut" width="500" />
+
+  <script src="main.js" charset="utf-8"></script>
+</body>
+
+</html>
