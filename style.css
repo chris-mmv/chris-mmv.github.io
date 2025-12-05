@@ -80,10 +80,9 @@ margin-top: auto;
     font-size: larger;
 }
 
-.container {
+/*.container {
     width: 100%;
-    padding: 10px;
-}
+}*/
 
 .row {
   display: flex;
