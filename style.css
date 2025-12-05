@@ -110,9 +110,9 @@ margin-top: auto;
   padding: 10px;
   /*background-color: #eee;*/
   text-align: center;
-  align-items: center;
+  /*align-items: center;
   justify-content: center;
-  justify-items: center;
+  justify-items: center;*/
 }
 
 @media (min-width: 600px) {
@@ -121,6 +121,7 @@ margin-top: auto;
     flex: 1 1 calc(33% - 10px); /* Makes them roughly third-width */
     
   }
+
 
 
 }
