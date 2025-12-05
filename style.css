@@ -21,7 +21,7 @@ text-align: center;
 align-items: center;
 justify-items: center;
 margin-top: auto;
-}
+
 
 .button-64 {
   align-items: center;
@@ -122,7 +122,7 @@ margin-top: auto;
   text-align: center;
 }
     
-}
+
 
 @media (min-width: 600px) {
   .column {
@@ -134,6 +134,8 @@ margin-top: auto;
 
 
 }
+}
+
 
 
 
