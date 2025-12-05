@@ -8,34 +8,57 @@
   <link rel="stylesheet" href="style.css" />
   </head>
 
-<body>
-  <h1 class="permanent-marker-regular">I can Calculate Astro Weight!</h1>
+<body class="container">
+  <div class="row">
+  <header>
+    <h1 class="permanent-marker-regular">I can Calculate Astro Weight!</h1>
+  </header>
+  </div>
 
+  <main>
   <!-- Input field to enter a weight -->
-  <label for="user-weight">Enter your weight:</label>
+    <div class="row">
+      <div class="columnL">
+      <label for="user-weight">Enter your weight:</label>
+      <input id="user-weight" type="text" placeholder="Weight (lbs)" />
+      </div>
+      
 
-  <input id="user-weight" type="text" placeholder="Weight (lbs)" />
+    <div class="columnR">
+    <!-- Drop down to select planet -->
+      <label for="planets">Choose a planet:</label>
+      <select id="planets" name="planets">
+        <option value="">--Please choose an option--</option>      
+      </select>
+    </div>
+    </div>
 
+    <div class="row">
+      <div class="columnC">
+<!-- Calculate button -->
+      <button class="button-64" role="button" id="calculate-button"><span class="text">Calculate</span></button>
+  <!--button class="button-64" role="button"><span class="text">Button 64</span></button-->
+      </div>
+    </div>
 
-  <!-- Drop down to select planet -->
-  <label for="planets">Choose a planet:</label>
-<select id="planets" name="planets">
-  <option value="">--Please choose an option--</option>
-  <!--DO NOT NEED TO MANUALLY INPUT THESE; AUTO GENERATED FROM JS ARRAY-->
-</select>
+    <div class="row">
+      <div class="columnC">
+        <!-- output sentence -->
+        <p id="output">Enter your weight, select a planet, then hit Calculate!<span id="output"></span>
+        </p>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="columnC">
+        <!--<img src="https://spaceplace.nasa.gov/review/planets-weight/planets-weight1.en.png" alt="Space Weight" width="425" />-->
+        <img src="ChatGPT Image Dec 3, 2025, 05_27_46 PM.png" alt="Fat Astronaut" style="width:50%" />
+      </div>
+    </div>
 
-  <!-- Calculate button -->
-  <button class="button-64" role="button" id="calculate-button"><span class="text">Calculate</span></button>
-  <!--button class="button-64" role="button"><span class="text">Button 64</span></button>
+  </main>
 
-  <!-- output sentence -->
-  <p id="output">
-    Enter your weight, select a planet, then hit Calculate!<span id="output"></span>
-  </p>
-
-  <!--<img src="https://spaceplace.nasa.gov/review/planets-weight/planets-weight1.en.png" alt="Space Weight" width="425" />-->
-  <img src="ChatGPT Image Dec 3, 2025, 05_27_46 PM.png" alt="Fat Astronaut" width="500" />
-
+  
   <script src="main.js" charset="utf-8"></script>
 </body>
 

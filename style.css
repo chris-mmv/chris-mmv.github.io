@@ -4,9 +4,14 @@ text-align: center;
 justify-items: center;
 font-family: monospace, sans-serif;
 font-size: 45px;
-margin-top: 150px;
+margin-top: 50px;
 text-shadow: 2px 2px 30px rgb(94, 0, 0);
 
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
 }
 
 body{
@@ -72,4 +77,49 @@ margin-top: auto;
     font-weight: bold;
     font-size: larger;
 }
+
+.container {
+    width: 100%;
+    padding: 10px;
+}
+
+.row {
+  display: flex;
+  gap: 20px; /* Provides space between columns */
+  margin-bottom: 10px;
+}
+
+.columnR {
+  /* On mobile, columns take up the full width (minus gap) */
+  flex: 1 1 100%;
+  padding: 10px;
+  /*background-color: #eee;*/
+  text-align: left;
+}
+.columnL {
+  /* On mobile, columns take up the full width (minus gap) */
+  flex: 1 1 100%;
+  padding: 10px;
+  /*background-color: #eee;*/
+  text-align: right;
+}
+
+.columnC {
+  /* On mobile, columns take up the full width (minus gap) */
+  flex: 1 1 100%;  
+  padding: 10px;
+  /*background-color: #eee;*/
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+@media (min-width: 600px) {
+  .column {
+    /* On wider screens (tablets/desktops), columns share the space equally */
+    flex: 1 1 calc(33% - 10px); /* Makes them roughly third-width */
+  }
+
+
 }
