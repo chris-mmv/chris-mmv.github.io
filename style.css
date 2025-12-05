@@ -113,6 +113,13 @@ margin-top: auto;
   /*align-items: center;
   justify-content: center;
   justify-items: center;*/
+
+.column{
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+    
 }
 
 @media (min-width: 600px) {
@@ -125,3 +132,4 @@ margin-top: auto;
 
 
 }
+
