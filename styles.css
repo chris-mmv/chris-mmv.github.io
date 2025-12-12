@@ -1,0 +1,73 @@
+body {
+  padding-top: 3rem;
+}
+
+/* Fullscreen overlay behind the popup */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: none;/*js set to flex when open*/              
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal size constraints */
+.popup-modal {
+  max-width: 400px;
+  width: 90%;
+}
+
+.calc-wrapper {
+  background: rgba(56, 54, 54, 0.425); 
+  padding: 2rem;
+  border-radius: 12px;
+  /* max-width: 600px; */
+  margin: 2rem auto;                     /* center it */
+  box-shadow: 0 4px 20px rgba(0, 180, 9, 0.25);
+}
+
+#denomDisplay {
+  margin-top: 2rem;
+}
+
+/* First dynamic output (message / change due) */
+#primary-output .primary-text {
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 0;
+}
+
+/* Second dynamic output: stacked rows of denoms and counts */
+#denomDisplay {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Top row: denominations, bottom row: counts */
+#denomDisplay .denom-row,
+#denomDisplay .count-row {
+  display: flex;
+  font-size: large;
+  font-weight: 700;
+  justify-content: space-evenly;
+  gap: 0.5rem;
+}
+
+/* Each cell evenly spaced and centered */
+#denomDisplay span {
+  flex: 1;
+  text-align: center;
+}
+
+#calculate-change:disabled {
+  opacity: 0.45 !important;
+  cursor: not-allowed !important;
+}
+
+#test-outputs {
+  display: none;
+}

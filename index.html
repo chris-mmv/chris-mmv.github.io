@@ -1,66 +1,165 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Astro Weight Calculator</title>
-  <link rel="stylesheet" href="style.css" />
-  </head>
+  <title>Change Calculator</title>
 
-<body>
-  <div class="row">
-    <div class="column">
-  <header>
-    <h1 class="permanent-marker-regular">Calculate Astro Weight!</h1>
-  </header>
+  <!-- Semantic UI CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css"/>
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body class="ui container">
+<div class="calc-wrapper">
+
+  <h1 class="ui center aligned header" style="margin-top: 2rem;">Change Calculator</h1>
+
+  <!-- Main form for owed / paid -->
+  <div class="ui form" style="margin-top: 2rem;">
+    <div class="two fields">
+      <div class="field">
+        <a class="ui red ribbon label">Input Amount Owed</a>
+        <!--label>Amount Owed</label-->
+        <input id="amount-due" type="number" min="0.01" step="0.01" placeholder="$0.00">
+      </div>
+      <div class="field">
+        <a class="ui green ribbon label">Input Amount Paid</a>
+        <!--label>Amount Paid</label-->
+        <input id="amount-received" type="number" min="0.01" step="0.01" placeholder="$0.00">
+      </div>
+    </div>
+    <!--div>
+          <p id="dollars-output" hidden></p>
+          <p id="quarters-output" hidden></p>
+          <p id="dimes-output" hidden></p>
+          <p id="nickels-output" hidden></p>
+          <p id="pennies-output" hidden></p>
+        </div-->
   </div>
+
+  <!-- Buttons -->
+  <div class="ui buttons" style="margin-top: 1rem;">
+    <!-- BUTTON TO OPEN POPUP -->
+    <button id="openMenuBtn" class="ui large violet button">
+      Choose Denominations
+    </button>
+
+    <div class="or"></div>
+
+    <!-- Calculate button -->
+    <button id="calculate-change" class="ui large green button" onclick="runCalc()" disabled>Calculate Change</button>
+
   </div>
 
-  <main>
-  <!-- Input field to enter a weight -->
-    <div class="row">
-      <div class="columnL">
-      <label for="user-weight">Enter your weight<br>(0.1 lb increments):</label></label>
-      <input id="user-weight" type="number" placeholder="Weight (lbs)" min="1" step=".1" oninput="validity.valid || (value='');"/>
+<br>
+
+<!-- Output area -->
+<div>
+  <!-- 1st output: change due -->
+  <div id="primary-output" class="ui segment" style="margin-top: 1rem;">
+  <p id="change-due" class="primary-text"></p>
+</div>
+
+  <!-- 2nd output: denominations / counts -->
+  <h3 id="denomTitle" class="ui dividing header" style="margin-top: 2rem;">
+  Denominations Selected
+  </h3>
+  <div id="denomDisplay" class="ui segment"></div>
+</div>
+
+  <!-- POPUP OVERLAY (our own, not Semantic dimmer) -->
+  <div id="popupOverlay" class="overlay">
+    <!-- Semantic-style modal -->
+    <div class="ui small modal active popup-modal">
+      <div class="header">
+        Select Denominations
       </div>
 
-    <div class="columnR">
-    <!-- Drop down to select planet -->
-      <label for="planets"><br>Choose a planet:</label>
-      <select id="planets" name="planets">
-        <option value="">--Please choose an option--</option>      
-      </select>
-    </div>
-    </div>
+      <div class="content">
+        <form class="ui form">
+          <div class="grouped fields">
 
-    <div class="row">
-      <div class="column">
-<!-- Calculate button -->
-      <button class="button-64" role="button" id="calculate-button"><span class="text">Calculate</span></button>
-  <!--button class="button-64" role="button"><span class="text">Button 64</span></button-->
+            <!-- bills > $1: default OFF (20, 10, 5) -->
+            <div class="field">
+              <div class="ui toggle checkbox">
+                <input type="checkbox" value="20" class="denom-toggle">
+                <label>$20</label>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="ui toggle checkbox">
+                <input type="checkbox" value="10" class="denom-toggle">
+                <label>$10</label>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="ui toggle checkbox">
+                <input type="checkbox" value="5" class="denom-toggle">
+                <label>$5</label>
+              </div>
+            </div>
+
+            <!-- $1 and coins: default ON -->
+            <div class="field">
+              <div class="ui toggle checkbox">
+                <input type="checkbox" value="1" class="denom-toggle" checked>
+                <label>$1</label>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="ui toggle checkbox">
+                <input type="checkbox" value="0.25" class="denom-toggle" checked>
+                <label>Quarters ($0.25)</label>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="ui toggle checkbox">
+                <input type="checkbox" value="0.10" class="denom-toggle" checked>
+                <label>Dimes ($0.10)</label>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="ui toggle checkbox">
+                <input type="checkbox" value="0.05" class="denom-toggle" checked>
+                <label>Nickels ($0.05)</label>
+              </div>
+            </div>
+
+            <!-- Pennies intentionally NOT included here -->
+          </div>
+        </form>
+      </div>
+
+      <div class="actions">
+        <button id="closeMenuBtn" class="ui red button">
+          Close
+        </button>
       </div>
     </div>
+  </div>
 
-    <div class="row">
-      <div class="column">
-        <!-- output sentence -->
-        <p id="output">Enter your weight, select a planet, then hit Calculate!<!--span id="output"--></span>
-        </p>
-      </div>
-    </div>
-    
-    <div class="row">
-      <div class="column">
-        <!--<img src="https://spaceplace.nasa.gov/review/planets-weight/planets-weight1.en.png" alt="Space Weight" width="425" />-->
-        <img src="ChatGPT Image Dec 3, 2025, 05_27_46 PM.png" alt="Fat Astronaut" style="width:50%" />
-      </div>
-    </div>
+  <!--Required for NPM tests; not functional (hidden by js)-->
+  <div id="test-outputs">
+  <p id="dollars-output"></p>
+  <p id="quarters-output"></p>
+  <p id="dimes-output"></p>
+  <p id="nickels-output"></p>
+  <p id="pennies-output"></p>
+</div>  
 
-  </main>
+</div>
 
   
-  <script src="main.js" charset="utf-8"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.js"></script>
+  <script src="main.js"></script>
+</div>
 </body>
-
 </html>
