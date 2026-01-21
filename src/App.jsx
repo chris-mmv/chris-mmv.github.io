@@ -165,14 +165,14 @@ function App() {
 
           {schedule.length > 0 && (
             <>
-              <h2 className="table-title">Amortization Schedule</h2>
+              <h2 className="table-title">Amortization Breakdown</h2>
               <section className="table-section">
                 <div className="table-scroll">
                   <table>
                     <thead>
                       <tr>
                         <th>Month</th>
-                        <th>Payment</th>
+                        {/* <th>Payment</th> */}
                         <th>Principal</th>
                         <th>Interest</th>
                         <th>Balance</th>
@@ -181,8 +181,8 @@ function App() {
                     <tbody>
                       {schedule.map((entry, index) => (
                         <tr key={index}>
-                          <td>{entry.month}</td>
-                          <td>${formatMoney(entry.payment)}</td>
+                          <td className="col-month">{entry.month}</td>
+                          {/* <td>${formatMoney(entry.payment)}</td> */}
                           <td>${formatMoney(entry.principal)}</td>
                           <td>${formatMoney(entry.interest)}</td>
                           <td>${formatMoney(entry.balance)}</td>
